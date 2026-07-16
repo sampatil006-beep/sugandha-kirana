@@ -240,13 +240,13 @@ class _ProductListScreenState
                 _filteredProducts[index];
 
                 return Card(
-                  elevation: 3,
-                  shadowColor: Colors.black.withValues(alpha: 0.08),
-                  color: Colors.white,
                   margin: const EdgeInsets.symmetric(
                     horizontal: 16,
                     vertical: 6,
                   ),
+                  elevation: 5,
+                  shadowColor: const Color(0x332D1B69),
+                  color: Colors.white,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(18),
                   ),
