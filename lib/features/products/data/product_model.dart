@@ -1,5 +1,9 @@
 class ProductModel {
   final int? id;
+
+  // Local + Supabase common id
+  final String uuid;
+
   final String name;
   final String? barcode;
   final double purchasePrice;
@@ -8,11 +12,16 @@ class ProductModel {
   final String unit;
   final bool isLooseItem;
   final int stock;
+
+  final bool isSynced;
+  final DateTime? deletedAt;
+
   final DateTime? createdAt;
   final DateTime? updatedAt;
 
   const ProductModel({
     this.id,
+    required this.uuid,
     required this.name,
     this.barcode,
     required this.purchasePrice,
@@ -21,12 +30,15 @@ class ProductModel {
     required this.unit,
     required this.isLooseItem,
     this.stock = 0,
+    this.isSynced = false,
+    this.deletedAt,
     this.createdAt,
     this.updatedAt,
   });
 
   ProductModel copyWith({
     int? id,
+    String? uuid,
     String? name,
     String? barcode,
     double? purchasePrice,
@@ -35,11 +47,14 @@ class ProductModel {
     String? unit,
     bool? isLooseItem,
     int? stock,
+    bool? isSynced,
+    DateTime? deletedAt,
     DateTime? createdAt,
     DateTime? updatedAt,
   }) {
     return ProductModel(
       id: id ?? this.id,
+      uuid: uuid ?? this.uuid,
       name: name ?? this.name,
       barcode: barcode ?? this.barcode,
       purchasePrice: purchasePrice ?? this.purchasePrice,
@@ -48,6 +63,8 @@ class ProductModel {
       unit: unit ?? this.unit,
       isLooseItem: isLooseItem ?? this.isLooseItem,
       stock: stock ?? this.stock,
+      isSynced: isSynced ?? this.isSynced,
+      deletedAt: deletedAt ?? this.deletedAt,
       createdAt: createdAt ?? this.createdAt,
       updatedAt: updatedAt ?? this.updatedAt,
     );
@@ -56,6 +73,7 @@ class ProductModel {
   factory ProductModel.fromJson(Map<String, dynamic> json) {
     return ProductModel(
       id: json['id'] as int?,
+      uuid: json['uuid'] ?? '',
       name: json['name'] ?? '',
       barcode: json['barcode'],
       purchasePrice: (json['purchase_price'] as num).toDouble(),
@@ -64,6 +82,10 @@ class ProductModel {
       unit: json['unit'] ?? 'Piece',
       isLooseItem: json['is_loose_item'] ?? false,
       stock: json['stock'] ?? 0,
+      isSynced: json['is_synced'] ?? false,
+      deletedAt: json['deleted_at'] != null
+          ? DateTime.parse(json['deleted_at'])
+          : null,
       createdAt: json['created_at'] != null
           ? DateTime.parse(json['created_at'])
           : null,
@@ -76,6 +98,7 @@ class ProductModel {
   Map<String, dynamic> toJson() {
     return {
       'id': id,
+      'uuid': uuid,
       'name': name,
       'barcode': barcode,
       'purchase_price': purchasePrice,
@@ -84,6 +107,8 @@ class ProductModel {
       'unit': unit,
       'is_loose_item': isLooseItem,
       'stock': stock,
+      'is_synced': isSynced,
+      'deleted_at': deletedAt?.toIso8601String(),
       'created_at': createdAt?.toIso8601String(),
       'updated_at': updatedAt?.toIso8601String(),
     };

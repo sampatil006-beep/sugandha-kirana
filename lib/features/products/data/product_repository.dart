@@ -14,4 +14,5 @@ abstract class ProductRepository {
   Future<void> deleteProduct(int id);
 
   Stream<List<ProductModel>> watchProducts();
+
 }
