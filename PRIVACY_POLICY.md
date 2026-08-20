@@ -1,0 +1,57 @@
+# Privacy Policy for DhandaX: POS Billing & Khata
+
+**Last updated:** August 20, 2026
+
+**Patil Labs** ("we", "our", or "us") operates the **DhandaX: POS Billing & Khata** mobile application (the "Service"). This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data.
+
+---
+
+## 1. Information Collection and Use
+
+DhandaX is built with an **Offline-First** architecture. Your business data (sales transactions, customers, suppliers, inventory, staff attendance, quotations, and financial reports) is stored locally on your device in a secure SQLite database.
+
+### Types of Data Collected:
+- **Device & Usage Information:** Basic device information and diagnostic telemetry for app stability.
+- **Permissions Used:**
+  - **Camera Permission:** Used strictly for barcode and QR code scanning to add products and invoices. We do not store or transmit your photos.
+  - **Microphone / Speech Recognition:** Used solely for real-time voice calculation and voice-to-bill parsing. Audio recordings are processed on-device or via Google Speech Services and are not saved on our servers.
+  - **Storage / Photos Permission:** Used solely for exporting PDF invoices, reports, and generating receipts.
+  - **Bluetooth & Nearby Devices:** Used strictly for connecting to Bluetooth thermal receipt printers.
+
+---
+
+## 2. Third-Party Services & Advertising
+
+Our Service uses third-party services that may collect information used to identify you:
+
+- **Google Play Services**
+- **Google AdMob:** We display advertisements served by Google AdMob. AdMob may use device identifiers (such as Google Advertising ID) and cookies to serve personalized or non-personalized ads in accordance with Google's Privacy Policy.
+  - [Google Privacy Policy](https://policies.google.com/privacy)
+  - [Google AdMob Policies](https://support.google.com/admob/answer/6128543)
+
+---
+
+## 3. Data Security
+
+The security of your business and customer data is important to us. Your commercial records, customer ledger, and invoices remain on your device. We do not sell, rent, or trade your personal or business data to third parties.
+
+---
+
+## 4. Children's Privacy
+
+Our Service is intended for retail store owners, wholesalers, and commercial businesses. It is not directed at anyone under the age of 18 ("Children"). We do not knowingly collect personally identifiable information from children under 18.
+
+---
+
+## 5. Changes to This Privacy Policy
+
+We may update our Privacy Policy from time to time. You are advised to review this page periodically for any changes.
+
+---
+
+## 6. Contact Us
+
+If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us:
+
+- **Developer / Company:** Patil Labs
+- **Email:** patillabsdev@gmail.com
